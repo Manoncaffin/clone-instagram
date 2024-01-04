@@ -1,6 +1,6 @@
 <?php
 
-$database = 
+// $database = 
 
 ?>
 
