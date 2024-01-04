@@ -1,3 +1,12 @@
+
+<?php
+
+// require_once('../database.php');
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +23,16 @@
 </div>
 <div class="px-5">
     <div><h1>Instagram</h1></div>
-    <div class="pt-5"><input type="text" class="champPseudo" id="pseudo" placeholder="Pseudo"></div>
+    <form action="../process/user_know.php" method="post">
+    <div class="pt-5"><input type="text" class="champPseudo" id="pseudo" placeholder="Pseudo" name="pseudo"></div>
     <div class="pt-3"><input type="text" class="champMp" id="mp" placeholder="Mot de Passe"></div>
-    <div class="pt-4"><button type="submit" href="./page2.php" class="btn btn-primary">Go</button></div>
-    <img class="imglogo pt-5 px-5" src="../img/logo-insta.jpg" alt="">
+    <div class="pt-4"><button type="submit" href="./index.php" class="btn btn-primary">Go</button></div>
+    <img class="imglogo pt-5 px-5" src="..//img/logo-insta.jpg" alt="">
     <p class="pt-5">Téléchargez l'application</p>
     <img class="googlePlay" src="../img/google play.png" alt="">
 
 </div>
+</form>
 <!-- <div>
 </div> -->
 </main>

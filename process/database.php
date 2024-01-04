@@ -2,7 +2,7 @@
 
 
 try{
-    $dsn = 'mysql:host=localhost;clone_instagram';
+    $dsn = 'mysql:host=localhost;dbname=clone_instagram';
     
     $username = 'root';
     

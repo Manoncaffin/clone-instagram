@@ -1,5 +1,5 @@
 <?php
-
+require_once('./database.php');
 var_dump($_POST);
 session_start();
 
@@ -7,28 +7,30 @@ if(
     isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
     
 ) { 
-    require_once('./database_connect.php');
     $_SESSION['pseudo'] = $_POST['pseudo'];
 
-    $findUser = $database->prepare('SELECT * FROM user WHERE pseudo = :pseudo');
-    $findUser->execute([
-        'pseudo' => $_POST["pseudo"], 
+    $pseudo = $_POST['pseudo'];
+    
+    $request = $database->prepare("SELECT * FROM user WHERE pseudo = :pseudo");
+    $request->execute([
+        ':pseudo' => $pseudo
     ]);
-    $existingUser = $findUser->fetch();
 
-    if($existingUser) {
-        $userId = $existingUser['id'];
-    } else {
-        $request = $database->prepare('INSERT INTO user (pseudo, score) 
-        VALUES (:pseudo,:score)');
-        $request->execute([
-            'pseudo' => $_POST["pseudo"], 
-            'score'=> 0 ,
-        ]);
+    $pseudoexist = $request->fetch();
+     
+
+
+    if(!$pseudoexist) {
+        $request2 = $database->prepare('INSERT INTO user (pseudo)
+        VALUES (:pseudo)');
+        $request2->execute([
+            'pseudo' => $_POST["pseudo"]
+        ]); 
+    } 
     }
 
-}
 
-header('Location: ../pages/questions.php');
+
+header('Location: ../pages/index.php');
 
 ?>
