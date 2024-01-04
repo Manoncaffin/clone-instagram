@@ -13,3 +13,9 @@ margin: 0px;
     height: 150px;
     width: 150px;
 }
+
+.blockInsta {
+    width: 20vw;
+    height: 100vh;
+    background-color: rgb(212, 212, 212);
+}

@@ -1,3 +1,9 @@
+<?php
+
+// $database = 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,111 +27,130 @@
                 </div>
 
                 <div class="pt-5">
-                    <p>Accueil</p>
+                    <p class="text-black">Accueil</p>
                     <br>
-                    <p>Recherche</p>
+                    <p class="text-black">Découvrir</p>
                     <br>
-                    <p>Découvrir</p>
+                    <p class="text-black">Messages</p>
                     <br>
-                    <p>Messages</p>
+                    <p class="text-black">Créer</p>
                     <br>
-                    <p>Créer</p>
+                    <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
                     <br>
-                    <p>Profil</p>
+                    <br>
+                    <form method="GET" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="search">
+                        <button class="btn btn-outline-danger" type="submit">Rechercher</button>
                 </div>
             </div>
 
             <div class="container-md col-7 p-5">
 
-                <div class="d-flex justify-content-between">
-                    <div class="justify-content-start">
-                        <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
-                    </div>
+                <div class="d-flex justify-content-around">
+                    <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
 
-                    <div class="d-flex flex-column align-items-start">
-                        <p class="">Clément Gaillard designer</p>
+                    <div class="flex-colum">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="pe-3">Construire Solidaire</p>
 
-                        <div class="align-items-center">
-                            <button type="button" class="btn btn-secondary">Modifier le profil</button>
-                            <button type="button" class="btn btn-secondary">Voir l'archive</button>
-                        </div>
+                            <div class="justify-content-between pb-3">
+                                <button type="button" class="btn btn-secondary btn-sm">Modifier le profil</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Voir l'archive</button>
+                            </div>
 
-                        <div class="d-flex">
-                            <p class="text-center p-3">44</p>
-                            <p class="text-center p-3">publications</p>
-
-                            <p class="text-center p-3">736</p>
-                            <p class="text-center p-3">followers</p>
-
-                            <p class="text-center p-3">290</p>
-                            <p class="text-center p-3">Suivi(e)s</p>
+                            <!-- <div class="justify-content-start">
+                                <div>
+                                    <p class="text-center pt-2">44</p>
+                                    <p class="text-center">publications</p>
+                                </div>
+                                <div>
+                                    <p class="text-center pt-2">736</p>
+                                    <p class="text-center">followers</p>
+                                </div>
+                                <div>
+                                    <p class="text-center pt-2">290</p>
+                                    <p class="text-center">Suivi(e)s</p>
+                                </div>
+                            </div> -->
                         </div>
 
                         <div>
-                        <p>Designer, Urbanist & Consultant in Bioclimatic design</p>
-                        <p>Fondateur : @freio_designclimatique</p>
-                        <p>Voir la traduction</p>
-                        <a href="">clementgaillard.com</a>
-                    </div>
+                            <p>CONSTRUIRE SOLIDAIRE #SCIC-PTCE rassemble des acteurs</p>
+                            <p>engagés #éco-construction #habitat durable et solidaire</p>
+                            <br>
+                            <a href="">www.construire-solidaire.fr</a>
+                        </div>
 
+                        <div class="d-flex justify-content-between align-items-center text-center pt-3">
+                            <div>
+                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <p class="">Interview</p>
+                            </div>
+                            <div>
+                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <p>Collectif</p>
+                            </div>
+                            <div>
+                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <p>Collectivités</p>
+                            </div>
+                            <div>
+                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <p>Architecture</p>
+                            </div>
+                            <div>
+                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <p>Centre social</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-around align-items-center w-100 pt-5">
-
-                </div>
-
-
-
-
-
-                
-                    <div class="container-fluid d-flex">
-                        <div class="row">
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
+                <div class="container-fluid d-flex w-100 pt-5">
+                    <div class="row">
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
                         </div>
 
-                        <div class="row">
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
+                        <div class="col-7 pb-3">
+                            <img src="../img/pleins-logo-insta.jpeg" style="width:15vw; height:25vh">
                         </div>
 
-                        <div class="row">
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
-
-                            <div class="col-7">
-                                <img src="../img/insta2.jpg">
-                            </div>
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta3.jpg" style="width:15vw; height:25vh">
                         </div>
                     </div>
 
-                
+                    <div class="row">
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta1.jpg" style="width:15vw; height:25vh">
+                        </div>
+
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
+                        </div>
+
+                        <div class="col-7 pb-3">
+                            <img src="../img/pleins-logo-insta.jpeg" style="width:15vw; height:25vh">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
+                        </div>
+
+                        <div class="col-7 pb-3">
+                            <img src="../img/insta1.jpg" style="width:15vw; height:25vh">
+                        </div>
+
+                        <div class="col-7 pb-3">
+                            <img src="../img/pleins-logo-insta.jpeg" style="width:15vw; height:25vh">
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
 
 
 
