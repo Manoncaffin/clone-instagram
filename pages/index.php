@@ -1,6 +1,11 @@
 <?php
 
-// $database = 
+require_once('../process/database.php');
+$allUsers = $database->query('SELECT * FROM user ORDER BY id DESC');
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $research = htmlspecialchars($_GET['search']);
+    $allUsers = $database->query('SELECT pseudo FROM user WHERE pseudo LIKE "%' . $research . '%" ORDER BY id DESC');
+}
 
 ?>
 
@@ -38,9 +43,25 @@
                     <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
                     <br>
                     <br>
+                    <a href="../pages/user_connect.php" class="text-decoration-none text-black">Se déconnecter</a>
+                    <br>
+                    <br>
                     <form method="GET" class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Rechercher" name="search">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
+                        <br>
+                        <br>
+                        <div class="afficher_user">
+                            <?php
+                            if ($allUsers->rowCount() > 0) {
+                            } else {
+                            ?>
+                                <p>Aucun utilisateur trouvé</p>
+                            <?php
+                            }
+
+                            ?>
+                        </div>
                 </div>
             </div>
 
