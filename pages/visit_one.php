@@ -12,7 +12,6 @@
 <body>
 
     <main>
-
         <div class="d-flex vh-100">
 
             <div class="blockInsta col-2 p-5">
@@ -76,23 +75,23 @@
 
                         <div class="col-12 d-flex justify-content-between align-items-center text-center pt-3">
                             <div>
-                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <img src="../img/insta4.jpg" id="1" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
                                 <p class="">Interview</p>
                             </div>
                             <div>
-                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <img src="../img/insta4.jpg" id="2" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
                                 <p>Climate</p>
                             </div>
                             <div>
-                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <img src="../img/insta4.jpg" id="3" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
                                 <p>Design</p>
                             </div>
                             <div>
-                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <img src="../img/insta4.jpg" id="4" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
                                 <p>Architecture</p>
                             </div>
                             <div>
-                                <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
+                                <img src="../img/insta4.jpg" id="5" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70px">
                                 <p>Urbanisme</p>
                             </div>
                         </div>
