@@ -1,11 +1,6 @@
 <?php
 
 require_once('../process/database.php');
-$allUsers = $database->query('SELECT * FROM user ORDER BY id DESC');
-if (isset($_GET['search']) && !empty($_GET['search'])) {
-    $research = htmlspecialchars($_GET['search']);
-    $allUsers = $database->query('SELECT pseudo FROM user WHERE pseudo LIKE "%' . $research . '%" ORDER BY id DESC');
-}
 
 ?>
 
@@ -18,24 +13,6 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="../styles.css" rel="stylesheet">
     <title>Instagram</title>
-    <script>
-        $(document).ready(function () {
-            $('form').submit(function (event) {
-                event.preventDefault();
-
-                var searchValue = $('input[name="search"]').val();
-
-                $.ajax({
-                    type: 'GET',
-                    url: 'backend_script.php',
-                    data: { search: searchValue },
-                    success: function (response) {
-                        $('.profile-details').html(response);
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -49,10 +26,6 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                 <div class="pt-5">
                     <p class="text-black">Accueil</p>
                     <br>
-                    <p class="text-black">Découvrir</p>
-                    <br>
-                    <p class="text-black">Messages</p>
-                    <br>
                     <p class="text-black">Créer</p>
                     <br>
                     <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
@@ -61,23 +34,12 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                     <a href="../pages/user_connect.php" class="text-decoration-none text-black">Se déconnecter</a>
                     <br>
                     <br>
-                    <form method="GET" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="search">
+                    <form method="post" action="./index.php" class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
                 </form>
                         <br>
                         <br>
-                        <div class="afficher_user">
-                            <?php
-                            if ($allUsers->rowCount() > 0) {
-                                foreach ($allUsers as $user) {
-                                    echo "<p>" . $user['pseudo'] . "</p>";
-                                }
-                            } else {
-                                echo "<p>Aucun utilisateur trouvé</p>";
-                            }
-                            ?>
-                        </div>
                 </div>
             </div>
 
@@ -94,21 +56,6 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
                                 <button type="button" class="btn btn-secondary btn-sm">Modifier le profil</button>
                                 <button type="button" class="btn btn-secondary btn-sm">Voir l'archive</button>
                             </div>
-
-                            <!-- <div class="justify-content-start">
-                                <div>
-                                    <p class="text-center pt-2">44</p>
-                                    <p class="text-center">publications</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">736</p>
-                                    <p class="text-center">followers</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">290</p>
-                                    <p class="text-center">Suivi(e)s</p>
-                                </div>
-                            </div> -->
                         </div>
 
                         <div>
