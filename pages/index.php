@@ -19,6 +19,7 @@ include_once('../process/result_research.php');
 </head>
 
 <body>
+    <p>gfbgfn</p>
     <main>
         <div class="d-flex vh-100">
             <div class="blockInsta col-2 p-5">
