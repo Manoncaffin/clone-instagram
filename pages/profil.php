@@ -1,6 +1,6 @@
 <?php
 
-// $database = 
+require_once('../process/database.php');
 
 ?>
 
@@ -10,8 +10,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-    <link href="../styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
@@ -19,8 +17,7 @@
 
     <main>
         <div class="d-flex vh-100">
-
-        <div class="blockInsta col-2 p-5">
+            <div class="blockInsta col-2 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -48,11 +45,9 @@
                     <form method="POST" class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
-                    </form>
-                    <br>
-                    <br>
-                    <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
-                 
+                </form>
+                        <br>
+                        <br>
                 </div>
             </div>
 
@@ -119,12 +114,20 @@
                     </div>
                 </div>
 
+
                 <div class="container-fluid d-flex w-100 pt-5">
                     <div class="row">
                         <div class="col-7 pb-3">
-                            <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
-
+                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
                         </div>
+
+                        <!-- <div>
+                            <?php
+                            // echo "<img src=\"../img_post" . $_SERVER["DOCUMENT_ROOT"] . "../img_post" . $_POST["photo"] . "\" />";
+                            // echo "<input type=\"hidden\" name=\"photo\" value=\"" . $_POST["photo"] . "\" />\n";
+                            ?>
+                            <img src="../img_post/mail.png" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
+                        </div> -->
 
                         <div class="col-7 pb-3">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
@@ -151,15 +154,11 @@
 
                     <div class="row">
                         <div class="col-7 pb-3">
-
-                            <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
-
+                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
                         </div>
 
                         <div class="col-7 pb-3">
-
-                            <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
-
+                            <img src="../img/insta1.jpg" style="width:15vw; height:25vh">
                         </div>
 
 
@@ -167,9 +166,7 @@
 
 
                         <div class="col-7 pb-3">
-
-                            <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
-
+                            <img src="../img/pleins-logo-insta.jpeg" style="width:15vw; height:25vh">
                         </div>
                     </div>
                 </div>
@@ -177,17 +174,11 @@
         </div>
     </main>
 
-    <div id="myModal" class="modalImg d-flex"><img src="../img/archi2.jpg" width="600px" height="600px" alt="">
+    <div id="myModal" class="modalImg"><img src="../img/archi2.jpg" width="600px" height="600px" alt="">
         <div>
-            <form action="../process/comment.php" method="post"></form>
-            <div class="carre_comment"></div>
-            <input class="commentaire" type="text" placeholder="commenter..." name="comment">
-            <img id="coeurRouge" class="coeur" src="../img/coeur.jpg" alt="" width="70px" height="60px">
-            <div class=""><button type="submit" class="btn btn-primary">Go</button></div>
-
-
+            <form action="" method="post"></form>
+            <input class="commentaire" type="text" placeholder="commenter...">
         </div>
-
     </div>
 
 

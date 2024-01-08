@@ -1,6 +1,5 @@
 
 <?php
-
 // code pour envoyer une image dans img_post, puis dans la bdd 
 require_once('./database.php');
 session_start();

@@ -49,21 +49,6 @@
                                 <button type="button" class="btn btn-secondary btn-sm">Suivre</button>
                                 <button type="button" class="btn btn-secondary btn-sm">contacter</button>
                             </div>
-
-                            <!-- <div class="justify-content-start">
-                                <div>
-                                    <p class="text-center pt-2">44</p>
-                                    <p class="text-center">publications</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">736</p>
-                                    <p class="text-center">followers</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">290</p>
-                                    <p class="text-center">Suivi(e)s</p>
-                                </div>
-                            </div> -->
                         </div>
 
                         <div>
