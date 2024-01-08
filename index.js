@@ -6,3 +6,10 @@ imgpost.forEach(img => {
     modal.style.display = 'block';  
   });
 });
+
+const coeur = document.querySelector('.coeur');
+coeur.forEach(img => {
+  img.addEventListener('click',function () {
+    coeur.style.background = 'red';
+  })
+})
