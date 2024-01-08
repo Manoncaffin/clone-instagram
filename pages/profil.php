@@ -24,9 +24,9 @@ include_once('../process/result_research.php');
 
 <body>
     <main>
-    <div class="row d-flex">
+        <div class="row d-flex">
 
-<div class="blockInsta col-4 col-lg-3 p-5">
+            <div class="blockInsta col-4 col-lg-3 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -41,6 +41,7 @@ include_once('../process/result_research.php');
                         <input type="file" name="file">
                         <br>
                         <br>
+                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
@@ -65,6 +66,7 @@ include_once('../process/result_research.php');
             </div>
 
             <div class="container-md col-8 col-lg-9 p-5 px-0">
+            <div class="container-md col-8 col-lg-9 p-5 px-0">
 
                 <div class="avatar d-flex justify-content-around">
 
@@ -72,7 +74,7 @@ include_once('../process/result_research.php');
 
                     <div class="flex-colum">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="pe-3">Construire Solidaire</p>
+                            <strong class="pe-3">Construire Solidaire</strong>
 
                             <div class="justify-content-between pb-3">
                                 <button type="button" class="btn btn-secondary btn-sm">Modifier le profil</button>
@@ -112,6 +114,17 @@ include_once('../process/result_research.php');
                     </div>
                 </div>
 
+                <!-- photos in profile -->
+                <section class="myPhotos container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <?php foreach ($posts as $post) : ?>
+                            <div class="col-lg-4">
+                                <img class="border-myImage pt-5 myPost" src="<?php echo "../img_post/" . $post['photo'] ?>" alt="">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    </form>
+                </section>
 
                 <div class="container-fluid d-flex justify-content-center w-100 pt-5">
                     <div class="col-3">
@@ -127,10 +140,11 @@ include_once('../process/result_research.php');
                             <img src="../img_post/mail.png" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
                         </div> -->
 
-                        <div class="pb-3 d-flex justify-content-center">
+                        <div class="col-7 pb-3">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
+                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/insta3.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -138,13 +152,17 @@ include_once('../process/result_research.php');
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/mock-up-instagram.png" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi4.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
+                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi5.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -152,13 +170,17 @@ include_once('../process/result_research.php');
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
+                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -188,67 +210,3 @@ include_once('../process/result_research.php');
 </body>
 
 </html>
-<!-- <style>
-        /* Ajoutez du style CSS selon vos préférences */
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        #image-container {
-            max-width: 80%;
-            max-height: 80%;
-            text-align: center;
-        }
-
-        #image-en-grand {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        #commentaire {
-            color: white;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-
- Div pour l'affichage en grand -->
-<!-- <div id="overlay" onclick="fermerOverlay()">
-    <div id="image-container">
-        <img id="image-en-grand">
-        <p id="commentaire"></p>
-    </div>
-</div>
-
-
-<img src="../img/pleins-logo-insta.jpeg" onclick="afficherImage('image1.jpg', 'Commentaire pour image 1')">
-<img src="miniature2.jpg" onclick="afficherImage('image2.jpg', 'Commentaire pour image 2')">
-
-
-<script>
-    function afficherImage(src, commentaire) {
-        // Affiche l'overlay
-        document.getElementById('overlay').style.display = 'flex';
-
-        // Affiche l'image en grand
-        document.getElementById('image-en-grand').src = "../img/pleins-logo-insta.jpeg";
-
-        // Affiche le commentaire
-        document.getElementById('commentaire').innerText = commentaire;
-    }
-
-    function fermerOverlay() {
-        // Ferme l'overlay
-        document.getElementById('overlay').style.display = 'none';
-    }
-</script> -->

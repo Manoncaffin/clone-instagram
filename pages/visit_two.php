@@ -44,7 +44,7 @@
 
                     <div class="flex-colum">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="pe-3">Arnaud Malras</p>
+                            <strong class="pe-3">Arnaud Malras</strong>
 
                             <div class="justify-content-between pb-3">
                                 <button type="button" class="btn btn-secondary btn-sm">Suivre</button>
