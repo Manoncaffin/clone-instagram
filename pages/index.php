@@ -28,8 +28,8 @@ include_once('../process/result_research.php');
 <body>
     <main>
 
-        <div class="d-flex vh-100">
-            <div class="blockInsta col-2 p-5">
+    <div class="d-flex">
+            <div class="bblockInsta col-4 col-lg-3 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -44,7 +44,7 @@ include_once('../process/result_research.php');
                         <input type="file" name="file">
                         <br>
                         <br>
-                        <button type="submit">Enregistrer</button>
+                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>

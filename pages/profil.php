@@ -1,6 +1,13 @@
 <?php
-
 require_once('../process/database.php');
+$request = $database->query('SELECT * FROM user ORDER BY id DESC');
+$allUsers = $request->fetchAll();
+
+// var_dump($_GET['pseudo']);
+
+include_once('../process/result_research.php');
+
+// var_dump($allUsers);
 
 ?>
 
@@ -10,14 +17,16 @@ require_once('../process/database.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link href="../styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-
     <main>
-        <div class="d-flex vh-100">
-            <div class="blockInsta col-2 p-5">
+    <div class="row d-flex">
+
+<div class="blockInsta col-4 col-lg-3 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -32,7 +41,7 @@ require_once('../process/database.php');
                         <input type="file" name="file">
                         <br>
                         <br>
-                        <button type="submit">Enregistrer</button>
+                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>
@@ -45,15 +54,19 @@ require_once('../process/database.php');
                     <form method="POST" class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
-                </form>
-                        <br>
-                        <br>
+                    </form>
+                    <br>
+                    <br>
+                    <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
+                    <?php foreach ($allUsers as $allUser) { ?>
+                        <a href="./profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
+                    <?php } ?>
                 </div>
             </div>
 
-            <div class="container-md col-7 p-5">
+            <div class="container-md col-8 col-lg-9 p-5 px-0">
 
-                <div class="d-flex justify-content-around">
+                <div class="avatar d-flex justify-content-around">
 
                     <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
 
@@ -65,21 +78,6 @@ require_once('../process/database.php');
                                 <button type="button" class="btn btn-secondary btn-sm">Modifier le profil</button>
                                 <button type="button" class="btn btn-secondary btn-sm">Voir l'archive</button>
                             </div>
-
-                            <!-- <div class="justify-content-start">
-                                <div>
-                                    <p class="text-center pt-2">44</p>
-                                    <p class="text-center">publications</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">736</p>
-                                    <p class="text-center">followers</p>
-                                </div>
-                                <div>
-                                    <p class="text-center pt-2">290</p>
-                                    <p class="text-center">Suivi(e)s</p>
-                                </div>
-                            </div> -->
                         </div>
 
                         <div>
@@ -115,10 +113,10 @@ require_once('../process/database.php');
                 </div>
 
 
-                <div class="container-fluid d-flex w-100 pt-5">
-                    <div class="row">
-                        <div class="col-7 pb-3">
-                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
+                <div class="container-fluid d-flex justify-content-center w-100 pt-5">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
+                            <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <!-- <div>
@@ -129,44 +127,40 @@ require_once('../process/database.php');
                             <img src="../img_post/mail.png" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
                         </div> -->
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/insta3.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-7 pb-3">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/mock-up-instagram.png" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi4.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi5.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-7 pb-3">
-                            <img src="../img/insta2.jpg" style="width:15vw; height:25vh">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
+                            <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
-                            <img src="../img/insta1.jpg" style="width:15vw; height:25vh">
+                        <div class="pb-3 d-flex justify-content-center">
+                            <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-
-
-
-
-                        <div class="col-7 pb-3">
-                            <img src="../img/pleins-logo-insta.jpeg" style="width:15vw; height:25vh">
+                        <div class="pb-3 d-flex justify-content-center">
+                            <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
                 </div>
@@ -174,10 +168,17 @@ require_once('../process/database.php');
         </div>
     </main>
 
-    <div id="myModal" class="modalImg"><img src="../img/archi2.jpg" width="600px" height="600px" alt="">
-        <div>
-            <form action="" method="post"></form>
+    <div id="myModal" class="modalImg d-none">
+        <img id="imgModal"  src="" width="600px" height="600px" alt="">
+        <div class="">
+            <div id="btn_close">
+                <button type="button" class="btn-close " aria-label="Close"></button>
+            </div>
+
+
+            <div class="carre_comment"></div>
             <input class="commentaire" type="text" placeholder="commenter...">
+            <div><button type="submit" class="btn btn-primary">Go</button></div>
         </div>
     </div>
 
