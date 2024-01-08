@@ -21,4 +21,8 @@ $request->execute([
     'user_id' => 5
 ]); 
 };
+
+$newPost = $_FILES['photo'];
+$request = $database->query('SELECT photo FROM photo');
+$posts = $request->fetchAll(); 
 ?>

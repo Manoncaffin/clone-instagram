@@ -26,9 +26,9 @@ include_once('../process/result_research.php');
 
 <body>
     <main>
-        <div class="d-flex vh-100">
+        <div class="row d-flex">
 
-            <div class="blockInsta col-2 p-5">
+            <div class="blockInsta col-4 col-lg-3 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -43,7 +43,7 @@ include_once('../process/result_research.php');
                         <input type="file" name="file">
                         <br>
                         <br>
-                        <button type="submit">Enregistrer</button>
+                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>
@@ -66,14 +66,14 @@ include_once('../process/result_research.php');
                 </div>
             </div>
 
-            <div class="container-md col-7 p-5">
+            <div class="container-md col-8 col-lg-9 p-5 px-0">
 
-                <div class="d-flex justify-content-around">
+                <div class="avatar d-flex justify-content-around">
                     <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
 
                     <div class="flex-colum">
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="pe-3">Construire Solidaire</p>
+                            <strong class="pe-3">Construire Solidaire</strong>
 
                             <div class="justify-content-between pb-3">
                                 <button type="button" class="btn btn-secondary btn-sm">Modifier le profil</button>
@@ -118,52 +118,52 @@ include_once('../process/result_research.php');
                     <div class="row d-flex justify-content-center align-items-center">
                         <?php foreach ($posts as $post) : ?>
                             <div class="col-lg-4">
-                                <img class="border-myImage pt-5 myPost" src="<?php echo "../img_post/" . $post['src_photo'] ?>" alt="">
+                                <img class="border-myImage pt-5 myPost" src="<?php echo "../img_post/" . $post['photo'] ?>" alt="">
                             </div>
                         <?php endforeach; ?>
                     </div>
                     </form>
                 </section>
 
-                <div class="container-fluid d-flex w-100 pt-5">
-                    <div class="row">
-                        <div class="col-7 pb-3">
+                <div class="container-fluid d-flex justify-content-center w-100 pt-5">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/insta3.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-7 pb-3">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/mock-up-instagram.png" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi4.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi5.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-7 pb-3">
+                    <div class="col-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
