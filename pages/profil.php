@@ -69,7 +69,6 @@ include_once('../process/result_research.php');
             <div class="container-md col-7 p-5">
 
                 <div class="d-flex justify-content-around">
-
                     <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
 
                     <div class="flex-colum">
@@ -114,20 +113,23 @@ include_once('../process/result_research.php');
                     </div>
                 </div>
 
+                <!-- photos in profile -->
+                <section class="myPhotos container">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <?php foreach ($posts as $post) : ?>
+                            <div class="col-lg-4">
+                                <img class="border-myImage pt-5 myPost" src="<?php echo "../img_post/" . $post['src_photo'] ?>" alt="">
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    </form>
+                </section>
 
                 <div class="container-fluid d-flex w-100 pt-5">
                     <div class="row">
                         <div class="col-7 pb-3">
                             <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
-
-                        <!-- <div>
-                            <?php
-                            // echo "<img src=\"../img_post" . $_SERVER["DOCUMENT_ROOT"] . "../img_post" . $_POST["photo"] . "\" />";
-                            // echo "<input type=\"hidden\" name=\"photo\" value=\"" . $_POST["photo"] . "\" />\n";
-                            ?>
-                            <img src="../img_post/mail.png" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
-                        </div> -->
 
                         <div class="col-7 pb-3">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
@@ -183,67 +185,3 @@ include_once('../process/result_research.php');
 </body>
 
 </html>
-<!-- <style>
-        /* Ajoutez du style CSS selon vos préférences */
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        #image-container {
-            max-width: 80%;
-            max-height: 80%;
-            text-align: center;
-        }
-
-        #image-en-grand {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        #commentaire {
-            color: white;
-            text-align: center;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-
- Div pour l'affichage en grand -->
-<!-- <div id="overlay" onclick="fermerOverlay()">
-    <div id="image-container">
-        <img id="image-en-grand">
-        <p id="commentaire"></p>
-    </div>
-</div>
-
-
-<img src="../img/pleins-logo-insta.jpeg" onclick="afficherImage('image1.jpg', 'Commentaire pour image 1')">
-<img src="miniature2.jpg" onclick="afficherImage('image2.jpg', 'Commentaire pour image 2')">
-
-
-<script>
-    function afficherImage(src, commentaire) {
-        // Affiche l'overlay
-        document.getElementById('overlay').style.display = 'flex';
-
-        // Affiche l'image en grand
-        document.getElementById('image-en-grand').src = "../img/pleins-logo-insta.jpeg";
-
-        // Affiche le commentaire
-        document.getElementById('commentaire').innerText = commentaire;
-    }
-
-    function fermerOverlay() {
-        // Ferme l'overlay
-        document.getElementById('overlay').style.display = 'none';
-    }
-</script> -->
