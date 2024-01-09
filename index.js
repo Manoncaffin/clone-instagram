@@ -15,9 +15,7 @@ function openModal(event){
   //afficher la bonne image
   let imgModal = document.querySelector('#imgModal');
   imgModal.src = event.target.src;
-
 }
-
 
 // FERMER MODAL
 let btn_close = document.querySelector("#btn_close");
@@ -28,3 +26,9 @@ function closeModal() {
   modal.classList.remove('d-flex');
   modal.classList.add('d-none');
 }
+
+// Trouver un profil dans la BDD
+    function searchProfile() {
+    const pseudo = document.getElementsByName('pseudo').value;
+    window.location.href = 'profil.php?pseudo=${pseudo}';
+     }

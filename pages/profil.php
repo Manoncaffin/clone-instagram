@@ -48,9 +48,9 @@ $posts = $request->fetchAll();
                 </div>
 
                 <div class="pt-5">
-                    <p class="text-black">Accueil</p>
+                    <a href="./index.php" class="text-decoration-none text-black">Accueil</p>
                     <br>
-                    <a href="../pages/index.php" class="text-decoration-none text-black">Voir mon profil</a>
+                    <a href="profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
                     <br>
                     <br>
                     <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
@@ -71,9 +71,8 @@ $posts = $request->fetchAll();
                     </form>
                     <br>
                     <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
-                    <a href="../pages/user_connect.php"> <button class="btn btn-outline-danger" type="submit">Se déconnecter</button></a>
+                    <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
                     </form>
-                    <br>
                     <br>
                     <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
                     <?php foreach ($allUsers as $allUser) { ?>
@@ -131,11 +130,11 @@ $posts = $request->fetchAll();
                 </div>
 
                 <!-- photos in profile -->
-                <section class="myPhotos container">
-                    <div class="row d-flex justify-content-center align-items-center">
+                <section class="container">
+                    <div class="row d-flex justify-content-center align-items-center w-100">
                         <?php foreach ($posts as $post) : ?>
-                            <div class="col-lg-4">
-                                <img class="border-myImage pt-5 myPost" src="<?php echo $post['photo'] ?>" alt="" height="auto" width="100%">
+                            <div class="col-lg-3">
+                                <img class="pt-5 d-flex justify-content-center imgpost" src="<?php echo $post['photo'] ?>" alt="" height="auto" width="100%">
                             </div>
                         <?php endforeach; ?>
                     </div>

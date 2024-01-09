@@ -24,9 +24,9 @@ body, main, main>div{
   background-color: rgb(212, 212, 212);
 }
 
-.imgpost, .myPost {
+.imgpost {
   width: 300px;
-  height: 200px;
+  height: 300px;
 }
 
 .modalImg {
