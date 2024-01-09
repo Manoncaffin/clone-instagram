@@ -1,5 +1,14 @@
 <?php
 require_once('../process/database.php');
+session_start();
+
+if(
+    !isset($_SESSION['id']) || empty($_SESSION['id']) ||
+    !isset($_SESSION['pseudo']) || empty($_SESSION['pseudo'])
+){
+    header('Location: ./user_connect.php');
+}
+
 $request = $database->query('SELECT * FROM user ORDER BY id DESC');
 $allUsers = $request->fetchAll();
 
@@ -8,6 +17,13 @@ $allUsers = $request->fetchAll();
 include_once('../process/result_research.php');
 
 // var_dump($allUsers);
+
+// Récupération de toutes les photos de la base de données
+$request = $database->prepare('SELECT * FROM photo WHERE user_id = :id'); // Remplacez 5 par l'ID de l'utilisateur actuel
+$request->execute([
+    ':id' => $_SESSION['id']
+]);
+$posts = $request->fetchAll(); 
 
 ?>
 
@@ -34,27 +50,28 @@ include_once('../process/result_research.php');
                 <div class="pt-5">
                     <p class="text-black">Accueil</p>
                     <br>
+                    <a href="../pages/index.php" class="text-decoration-none text-black">Voir mon profil</a>
+                    <br>
+                    <br>
                     <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
-                        <label for="file">Créer</label>
+                        <label for="file">Créer :</label>
                         <br>
                         <br>
                         <input type="file" name="file">
                         <br>
                         <br>
                         <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
-                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>
-                    <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
-                    <br>
-                    <br>
-                    <a href="../pages/user_connect.php" class="text-decoration-none text-black">Se déconnecter</a>
-                    <br>
                     <br>
                     <form method="POST" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher un profil" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
+                    </form>
+                    <br>
+                    <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
+                    <a href="../pages/user_connect.php"> <button class="btn btn-outline-danger" type="submit">Se déconnecter</button></a>
                     </form>
                     <br>
                     <br>
@@ -65,7 +82,6 @@ include_once('../process/result_research.php');
                 </div>
             </div>
 
-            <div class="container-md col-8 col-lg-9 p-5 px-0">
             <div class="container-md col-8 col-lg-9 p-5 px-0">
 
                 <div class="avatar d-flex justify-content-around">
@@ -119,32 +135,32 @@ include_once('../process/result_research.php');
                     <div class="row d-flex justify-content-center align-items-center">
                         <?php foreach ($posts as $post) : ?>
                             <div class="col-lg-4">
-                                <img class="border-myImage pt-5 myPost" src="<?php echo "../img_post/" . $post['photo'] ?>" alt="">
+                                <img class="border-myImage pt-5 myPost" src="<?php echo $post['photo'] ?>" alt="" height="auto" width="100%">
                             </div>
                         <?php endforeach; ?>
                     </div>
-                    </form>
                 </section>
 
-                <div class="container-fluid d-flex justify-content-center w-100 pt-5">
+
+                <!-- images statiques -->
+                <!-- <div class="container-fluid d-flex justify-content-center w-100 pt-5">
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <!-- <div>
+                        <div>
                             <?php
                             // echo "<img src=\"../img_post" . $_SERVER["DOCUMENT_ROOT"] . "../img_post" . $_POST["photo"] . "\" />";
                             // echo "<input type=\"hidden\" name=\"photo\" value=\"" . $_POST["photo"] . "\" />\n";
                             ?>
                             <img src="../img_post/mail.png" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
-                        </div> -->
+                        </div> 
 
-                        <div class="col-7 pb-3">
+                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/pleins-logo-insta.jpeg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/insta3.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -152,17 +168,13 @@ include_once('../process/result_research.php');
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
-                    <div class="col-3">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/mock-up-instagram.png" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi4.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi5.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -170,22 +182,18 @@ include_once('../process/result_research.php');
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
-                    <div class="col-3">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>

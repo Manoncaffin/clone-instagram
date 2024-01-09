@@ -37,27 +37,28 @@ include_once('../process/result_research.php');
                 <div class="pt-5">
                     <p class="text-black">Accueil</p>
                     <br>
+                    <a href="../pages/index.php" class="text-decoration-none text-black">Voir mon profil</a>
+                    <br>
+                    <br>
                     <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
-                        <label for="file">Créer</label>
+                        <label for="file">Créer :</label>
                         <br>
                         <br>
                         <input type="file" name="file">
                         <br>
                         <br>
                         <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
-                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>
-                    <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
-                    <br>
-                    <br>
-                    <a href="../pages/user_connect.php" class="text-decoration-none text-black">Se déconnecter</a>
-                    <br>
                     <br>
                     <form method="POST" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher un profil" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
+                    </form>
+                    <br>
+                    <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
+                    <a href="../pages/user_connect.php"> <button class="btn btn-outline-danger" type="submit">Se déconnecter</button></a>
                     </form>
                     <br>
                     <br>
