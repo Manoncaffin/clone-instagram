@@ -74,7 +74,14 @@ body, main, main>div {
   margin-left: 40px;
   margin-right: 40px;
 }
-
+.coeur {
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.red {
+  background-color: red;
+}
 
 
 

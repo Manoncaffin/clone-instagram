@@ -126,7 +126,7 @@ include_once('../process/result_research.php');
                     </form>
                 </section>
 
-                <div class="container-fluid d-flex justify-content-center w-100 pt-5">
+                <div class="container-fluid d-flex justify-content-between w-100 pt-5">
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi2.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
@@ -145,24 +145,19 @@ include_once('../process/result_research.php');
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/insta3.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
                     </div>
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
-                    <div class="col-3">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/mock-up-instagram.png" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi4.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi5.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -170,17 +165,13 @@ include_once('../process/result_research.php');
 
                     <div class="col-3">
                         <div class="pb-3 d-flex justify-content-center">
-                    <div class="col-3">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi7.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
                         <div class="pb-3 d-flex justify-content-center">
-                        <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi6.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
 
-                        <div class="pb-3 d-flex justify-content-center">
                         <div class="pb-3 d-flex justify-content-center">
                             <img src="../img/archi8.jpg" alt="Photo de montagne" title="Cliquez pour agrandir" class="imgpost" />
                         </div>
@@ -191,15 +182,14 @@ include_once('../process/result_research.php');
     </main>
 
     <div id="myModal" class="modalImg d-none">
-        <img id="imgModal"  src="" width="600px" height="600px" alt="">
+        <img id="imgModal" src="" width="600px" height="600px" alt="">
         <div class="">
             <div id="btn_close">
                 <button type="button" class="btn-close " aria-label="Close"></button>
             </div>
-
-
             <div class="carre_comment"></div>
             <input class="commentaire" type="text" placeholder="commenter...">
+            <img id="coeur" class="coeur" height="60px " width="60px" src="../img/coeur.jpg" alt="">
             <div><button type="submit" class="btn btn-primary">Go</button></div>
         </div>
     </div>
