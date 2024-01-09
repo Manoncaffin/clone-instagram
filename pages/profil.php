@@ -91,7 +91,7 @@ $user = $request->fetch();
 
                 <div class="d-flex justify-content-around">
                     <div class= "avatar">
-                    <a href="change_avatar.php" class="rounded-circle"><img src="<?php echo $user['avatar']?>" class="rounded-circle" alt="avatar"></a>
+                    <a href="change_avatar.php" class="rounded-circle"><img src="<?php echo $user['avatar']?>" class="rounded-circle profil-image" alt="avatar"></a>
                     </div>
 
                     <div class="flex-colum">

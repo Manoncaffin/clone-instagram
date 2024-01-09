@@ -17,13 +17,15 @@ session_start();
 </body>
 </html>
 
+<div class="d-flex justify-content-center pt-5">
 <form action="../process/update_user.php" method="post" enctype="multipart/form-data">
       <label for="pseudo"></label>  
       <input type="text" name="pseudo" value="<?php echo $_SESSION['pseudo']?>">
       <label for="avatar"></label>   
-      <input type="file" name="avatar"> 
-      <button type="submit">Valider</button>             
+      <input type="file" name="avatar">      
+      <button class="btn btn-outline-danger" type="submit">Valider</button>      
 </form>
+</div>
 
 <script src="../index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
