@@ -24,9 +24,9 @@ include_once('../process/result_research.php');
 
 <body>
     <main>
-    <div class="row d-flex">
+        <div class="row d-flex">
 
-<div class="blockInsta col-4 col-lg-3 p-5">
+            <div class="blockInsta col-4 col-lg-3 p-5">
                 <div class="d-flex justify-content-start">
                     <h1 class="text center">Instagram</h1>
                 </div>
@@ -169,15 +169,14 @@ include_once('../process/result_research.php');
     </main>
 
     <div id="myModal" class="modalImg d-none">
-        <img id="imgModal"  src="" width="600px" height="600px" alt="">
+        <img id="imgModal" src="" width="600px" height="600px" alt="">
         <div class="">
             <div id="btn_close">
                 <button type="button" class="btn-close " aria-label="Close"></button>
             </div>
-
-
             <div class="carre_comment"></div>
             <input class="commentaire" type="text" placeholder="commenter...">
+            <img id="coeur" class="coeur" height="60px " width="60px" src="../img/coeur.jpg" alt="">
             <div><button type="submit" class="btn btn-primary">Go</button></div>
         </div>
     </div>

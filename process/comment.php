@@ -37,4 +37,19 @@ if (isset($_POST["comment"]) && !empty($_POST["comment"])) {
 } else {
     echo 'Le champ de commentaire est vide.';
 }
+// $lastId = $database->lastInsertId();
+// $date = date('d-m-y h:i:s');
+// $ip=$_SERVER['REMOTE_ADDR'];
+
+// $request=$database->prepare("INSERT INTO `message` (content ,created_at, ip_adress, user_id )
+//      VALUES(:content, :created_at, :ip_adress, :user_id)");
+   
+//    $request->execute([
+//        'content'=>$_POST["message"],
+//        'created_at'=>$date,
+//        'ip_adress'=>$ip,
+//        'user_id'=>$lastId
+       
+       
+//        ]);
 ?>

@@ -56,7 +56,13 @@ body, main, main>div{
   align-items: end;
   justify-content: right;
 }
-
-
+.coeur {
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.red {
+  background-color: red;
+}
 
 
