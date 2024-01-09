@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once('../process/database.php');
 $request = $database->query('SELECT * FROM user ORDER BY id DESC');
 
@@ -35,29 +35,30 @@ include_once('../process/result_research.php');
                 </div>
 
                 <div class="pt-5">
-                    <p class="text-black">Accueil</p>
+                    <a href="./index.php" class="text-decoration-none text-black">Accueil</p>
+                    <br>
+                    <a href="./profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
+                    <br>
                     <br>
                     <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
-                        <label for="file">Créer</label>
+                        <label for="file">Créer :</label>
                         <br>
                         <br>
                         <input type="file" name="file">
                         <br>
                         <br>
                         <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
-                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
                         <br>
                         <br>
                     </form>
-                    <a href="../pages/index.php" class="text-decoration-none text-black">Profil</a>
-                    <br>
-                    <br>
-                    <a href="../pages/user_connect.php" class="text-decoration-none text-black">Se déconnecter</a>
-                    <br>
                     <br>
                     <form method="POST" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher" name="pseudo">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher un profil" name="pseudo">
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
+                    </form>
+                    <br>
+                    <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
+                    <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
                     </form>
                     <br>
                     <br>
@@ -65,13 +66,6 @@ include_once('../process/result_research.php');
                     <?php foreach ($allUsers as $allUser) { ?>
                         <a href="./profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
                     <?php } ?>
-                    <!-- code pour trouver un profil dans la BDD -->
-                    <script>
-                        // function searchProfile() {
-                        //     const pseudo = document.getElementById('pseudo').value;
-                        //     window.location.href = 'profile.html?pseudo=${pseudo}';
-                        // }
-                    </script>
                 </div>
             </div>
         </div>
