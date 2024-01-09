@@ -2,10 +2,10 @@
 require_once('../process/database.php');
 session_start();
 
-if(
+if (
     !isset($_SESSION['id']) || empty($_SESSION['id']) ||
     !isset($_SESSION['pseudo']) || empty($_SESSION['pseudo'])
-){
+) {
     header('Location: ./user_connect.php');
 }
 
@@ -19,11 +19,17 @@ include_once('../process/result_research.php');
 // var_dump($allUsers);
 
 // Récupération de toutes les photos de la base de données
-$request = $database->prepare('SELECT * FROM photo WHERE user_id = :id'); // Remplacez 5 par l'ID de l'utilisateur actuel
+$request = $database->prepare('SELECT * FROM photo WHERE user_id = :id'); // ID aléatoire
 $request->execute([
     ':id' => $_SESSION['id']
 ]);
-$posts = $request->fetchAll(); 
+$posts = $request->fetchAll();
+
+$currentId = $_SESSION['id'];
+
+$request = $database->query("SELECT * FROM user WHERE id = $currentId");
+$user = $request->fetch();
+// var_dump($user);
 
 ?>
 
@@ -49,43 +55,44 @@ $posts = $request->fetchAll();
 
                 <div class="pt-5">
                     <a href="./index.php" class="text-decoration-none text-black">Accueil</p>
-                    <br>
-                    <a href="profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
-                    <br>
-                    <br>
-                    <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
-                        <label for="file">Créer :</label>
+                        <br>
+                        <a href="profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
                         <br>
                         <br>
-                        <input type="file" name="file">
+                        <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
+                            <label for="file">Créer :</label>
+                            <br>
+                            <br>
+                            <input type="file" name="file">
+                            <br>
+                            <br>
+                            <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
+                            <br>
+                            <br>
+                        </form>
                         <br>
+                        <form method="POST" class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Rechercher un profil" name="pseudo">
+                            <button class="btn btn-outline-danger" type="submit">Rechercher</button>
+                        </form>
                         <br>
-                        <button class="btn btn-outline-danger" type="submit">Enregistrer</button>
+                        <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
+                            <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
+                        </form>
                         <br>
-                        <br>
-                    </form>
-                    <br>
-                    <form method="POST" class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Rechercher un profil" name="pseudo">
-                        <button class="btn btn-outline-danger" type="submit">Rechercher</button>
-                    </form>
-                    <br>
-                    <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
-                    <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
-                    </form>
-                    <br>
-                    <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
-                    <?php foreach ($allUsers as $allUser) { ?>
-                        <a href="./profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
-                    <?php } ?>
+                        <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
+                        <?php foreach ($allUsers as $allUser) { ?>
+                            <a href="./profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
+                        <?php } ?>
                 </div>
             </div>
 
             <div class="container-md col-8 col-lg-9 p-5 px-0">
 
-                <div class="avatar d-flex justify-content-around">
-
-                    <img src="../img/insta4.jpg" class="rounded-circle" alt="Logo HTML w3" style="width:auto; height:70%">
+                <div class="d-flex justify-content-around">
+                    <div class= "avatar">
+                    <a href="change_avatar.php" class="rounded-circle"><img src="<?php echo $user['avatar']?>" class="rounded-circle" alt="avatar"></a>
+                    </div>
 
                     <div class="flex-colum">
                         <div class="d-flex justify-content-between align-items-center">

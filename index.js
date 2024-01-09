@@ -33,12 +33,13 @@ function closeModal() {
     window.location.href = 'profil.php?pseudo=${pseudo}';
      }
 
-// Trouver un profil dans la BDD
+// Trouver un profil dans la BDD / ne fonctionne pas 
     function searchProfile() {
     const pseudo = document.getElementsByName('pseudo').value;
     window.location.href = 'profil.php?pseudo=${pseudo}';
      }
 
+// Pour que le coeur affiche un like
 const coeur = document.querySelector("#coeur");
 coeur.addEventListener('click', () => {
 

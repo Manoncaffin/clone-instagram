@@ -83,6 +83,10 @@ body, main, main>div {
   background-color: red;
 }
 
+.avatar {
+  height: 10px;
+  width: auto;
+}
 
 
 
