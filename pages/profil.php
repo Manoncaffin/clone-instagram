@@ -54,7 +54,7 @@ $user = $request->fetch();
                 </div>
 
                 <div class="pt-5">
-                    <a href="./index.php" class="text-decoration-none text-black">Accueil</p>
+                    <a href="../index.php" class="text-decoration-none text-black">Accueil</p>
                         <br>
                         <a href="profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
                         <br>
@@ -77,7 +77,7 @@ $user = $request->fetch();
                         </form>
                         <br>
                         <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
-                            <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
+                            <a href="./pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
                         </form>
                         <br>
                         <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
