@@ -1,13 +1,17 @@
 <?php
 session_start();
-require_once('../process/database.php');
+require_once('./process/database.php');
 $request = $database->query('SELECT * FROM user ORDER BY id DESC');
 
 $allUsers = $request->fetchAll();
 
 // var_dump($_GET['pseudo']);
 
-include_once('../process/result_research.php');
+include_once('./process/result_research.php');
+
+if(!$_SESSION['id']) {
+    header('Location: ./pages/user_connect.php');
+}
 
 // var_dump($allUsers);
 
@@ -40,7 +44,7 @@ include_once('../process/result_research.php');
                     <a href="./profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
                     <br>
                     <br>
-                    <form action="../process/file_send.php" method="POST" enctype="multipart/form-data">
+                    <form action="./process/file_send.php" method="POST" enctype="multipart/form-data">
                         <label for="file">Créer :</label>
                         <br>
                         <br>
@@ -64,7 +68,7 @@ include_once('../process/result_research.php');
                     <br>
                     <!-- boucle pour trouver un utilisateur dans la barre de recherche (+ code php en haut de la page + code result_research.php) -->
                     <?php foreach ($allUsers as $allUser) { ?>
-                        <a href="./profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
+                        <a href="./pages/profil.php?pseudo=<?php echo $allUser['pseudo'] ?>"> <?= $allUser['pseudo'] ?></a>
                     <?php } ?>
                 </div>
             </div>
@@ -75,7 +79,7 @@ include_once('../process/result_research.php');
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../index.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>

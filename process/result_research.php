@@ -1,5 +1,4 @@
 <?php
-require_once('../process/database.php');
 
 if(
     isset($_POST["pseudo"]) && !empty($_POST["pseudo"])
