@@ -61,8 +61,8 @@ if(!$_SESSION['id']) {
                         <button class="btn btn-outline-danger" type="submit">Rechercher</button>
                     </form>
                     <br>
-                    <form action="../process/disconnect.php" method="POST" enctype="multipart/form-data">
-                    <a href="../pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
+                    <form action="./process/disconnect.php" method="POST" enctype="multipart/form-data">
+                    <a href="./pages/user_connect.php" class="text-decoration-none text-black" type="submit">Se déconnecter</a>
                     </form>
                     <br>
                     <br>
