@@ -41,7 +41,7 @@ if(!$_SESSION['id']) {
                 <div class="pt-5">
                     <a href="./index.php" class="text-decoration-none text-black">Accueil</p>
                     <br>
-                    <a href="./profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
+                    <a href="./pages/profil.php?id=<?php echo $_SESSION['id']; ?>" class="text-decoration-none text-black">Voir mon profil</a>
                     <br>
                     <br>
                     <form action="./process/file_send.php" method="POST" enctype="multipart/form-data">
